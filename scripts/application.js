@@ -95,15 +95,18 @@ function winner(space){
 
 
 $(function() {
-  $(".sortable").sortable({
-    revert: true
-  })
   $(".draggable").draggable({
-    connectToSortable: ".sortable",
     helper: "clone",
+    snap: ".tile",
+    snapMode: "inner",
     revert: "invalid"
     });
-  $( "ul, li" ).disableSelection();
+  $(".tile").droppable({
+    drop: function (event, ui) {
+      $(this)
+        .css("background-color",ui.draggable.css("background-color"))
+    }
+  })
 })
 
 
