@@ -10,7 +10,28 @@
 </head>
 <body>
   <h1 class="title">Connect-四</h1>
-  <h2 class="subtitle">Black Goes First</h2>
+  <h2 class="subtitle">Select Player 1:</h2>
+  <div class="player-select">
+    <table class="select-player">
+      <tr>
+        <th><div class="tile player black" id="black"></div></th>
+        <th><div class="tile player red" id="red"></div></th>
+      </tr>
+      <tr>
+        <th><div class="tile player hunter" id="hunter"></div></th>
+        <th><div class="tile player sherif" id="sherif"></div></th>
+        <th><div class="tile player sarah" id="sarah"></div></th>
+        <th><div class="tile player jaclyn" id="jaclyn"></div></th>
+      </tr>
+      <tr>
+        <th><div class="tile player shambhavi" id="shambhavi"></div></th>
+        <th><div class="tile player seba" id="seba"></div></th>
+        <th><div class="tile player mihai" id="mihai"></div></th>
+        <th><div class="tile player james" id="james"></div></th>
+      </tr>
+    </table>
+  </div>
+  <div class="tile draggable"></div>
   <table class="board">
     <tr class="row">
       <th class="0"><div id="0" class="arrow">&#8595;</div></th>
@@ -76,7 +97,5 @@
       <td class="6"><div id="56" class="tile white"></div></td>
     </tr>
   </table>
-      <!-- <div id="563" class="tile red draggable"></div> -->
-      <div class="tile draggable black"></div>
 </body>
 </html>
