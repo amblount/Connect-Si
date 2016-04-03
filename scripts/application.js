@@ -4,12 +4,16 @@ $(document).ready(function() {
 })
 
 function tileListener() {
-  $(".arrow").on("click",clickedArrorw());
+  $(".arrow").on("click", function(){
+    var arrow = this.attr("id");
+    clickedArrow(arrow);
+  });
 }
 
-function clickedArrow() {
-  var divId = addPiece($(this),color);
+function clickedArrow(arrow) {
+  var divId = addPiece(arrow,color);
   if (divId) {
+    console.log(arrow);
     // ajax call here
     if (checkForWin()){
       //ajax call to announce winner
@@ -42,13 +46,18 @@ function addPiece(column, piece){
   if (!board[5][column]){
     console.log(piece + " piece added to column " + column);
     board[5][column] = piece;
-    return (50+column);
+    var spaceToStr = ("5" + column.toString());
+    return spaceToStr;
   }
   for (var row = 1; row < height; row ++){
     if (board[row][column]){
       console.log(piece + " piece added to column " + column);
       board[row-1][column] = piece;
-      return ((row * 10)+column);
+      var spaceToStr = ((row * 10) + column).toString();
+      if (spaceToStr.length < 2){
+        spaceToStr = "0" + spaceToStr;
+      }
+      return spaceToStr;
     }
   }
 }
