@@ -4,18 +4,17 @@ body {
 
 .tile {
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   background-color: white;
   border-radius: 100%;
-  margin: 5px;
-  box-shadow: -5px 5px 3px #888888;
+  margin: 2px;
+  box-shadow: -3px 3px 0px #888888;
 }
 
 .board {
   background-color: yellow;
   opacity: 0.4;
-  transform: rotate(7deg);
 }
 
 .white {
@@ -37,7 +36,7 @@ body {
 .board {
   margin: 0 auto;
   margin-top: 50px;
-  box-shadow: 10px 10px 5px #888888;
+  box-shadow: 10px 10px 2px #888888;
 }
 
 .title {
@@ -45,6 +44,7 @@ body {
   font-size: 48px;
   margin: 0;
   margin-top: 40px;
+  text-shadow: 2px 2px 2px #888888;
 }
 
 .subtitle {
@@ -52,4 +52,9 @@ body {
   font-size: 24px;
   margin: 0;
   margin-top: 10px;
+  text-shadow: 1px 1px 2px #888888;
+}
+
+.title, .subtitle, .board {
+  transform: skew(0deg,3deg);
 }
