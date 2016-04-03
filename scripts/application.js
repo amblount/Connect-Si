@@ -17,7 +17,7 @@ function clickedArrow(arrow) {
     $("#" + divId).addClass(color);
     if (checkForWin()){
       alert(color.toUpperCase() + " WINS!");
-      location.reload();
+      location.reload(true);
     }
     changeColor();
   }
