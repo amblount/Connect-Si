@@ -58,3 +58,20 @@ body {
 .title, .subtitle, .board {
   transform: skew(0deg,3deg);
 }
+
+
+.board {
+  animation-duration: 2000s;
+  animation-name: wowrotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes wowrotate{
+  from {
+     transform: rotate(0deg);
+  }
+  to {
+     transform: rotate(360deg);
+  }
+}
