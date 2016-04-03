@@ -55,8 +55,6 @@ function addPiece(column, piece){
       console.log(piece + " piece added to column " + column);
       board[row-1][column] = piece;
       var spaceToStr = ((row-1).toString() + column);
-      console.log(spaceToStr);
-      console.log(spaceToStr.length);
       return spaceToStr;
     }
   }
@@ -68,13 +66,12 @@ function checkForWin(){
     for (var column = 0; column < width; column ++){
       var space = board[row][column];
       if (space){
+        console.log(row + ": " + column);
         var checkRows = rowCheckMethod(space, row, column);
         var checkColumns = columnCheckMethod(space, row, column);
         var checkDiags = diagCheckMethod(space, row, column)
         if (checkRows || checkColumns || checkDiags){
-          return winner(space);
-        }else{
-          return false;
+          return true;
         }
 
       }
@@ -83,15 +80,16 @@ function checkForWin(){
 }
 
 function rowCheckMethod(space, row, column){
-  if (row > 2){
-    return false;
-  }
-  var checker = (board[row + 1][column] === space) && (board[row + 2][column] === space) && (board[row + 3][column] === space);
+  var checker = (board[row][column + 1] === space) && (board[row][column + 2] === space) && (board[row][column + 3] === space);
+  // console.log(row + ": " + column);
   return checker;
 }
 
 function columnCheckMethod(space, row, column){
-  var checker = (board[row][column + 1] === space) && (board[row][column + 2] === space) && (board[row][column + 3] === space);
+  if (row > 2){
+    return false;
+  }
+  var checker = (board[row + 1][column] === space) && (board[row + 2][column] === space) && (board[row + 3][column] === space);
   return checker;
 }
 
@@ -114,10 +112,6 @@ function fwdDiagCheckMethod(space, row, column){
   var forwardSlash = (board[row - 1][column + 1] === space) && (board[row - 2][column + 2] === space) && (board[row - 3][column + 3] === space);
   return forwardSlash;
 
-}
-
-function winner(space){
-  return true;
 }
 
 
