@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 function tileListener() {
   $(".arrow").on("click", function(){
-    var arrow = this.attr("id");
+    var arrow = $(this).attr("id");
     clickedArrow(arrow);
   });
 }
@@ -13,10 +13,9 @@ function tileListener() {
 function clickedArrow(arrow) {
   var divId = addPiece(arrow,color);
   if (divId) {
-    console.log(arrow);
-    // ajax call here
+    $("#" + divId).css("color", color);
     if (checkForWin()){
-      //ajax call to announce winner
+      //announce winner
     }
     changeColor();
   }
