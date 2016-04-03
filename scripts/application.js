@@ -16,7 +16,8 @@ function clickedArrow(arrow) {
     $("#" + divId).removeClass('white');
     $("#" + divId).addClass(color);
     if (checkForWin()){
-      //announce winner
+      alert(color.toUpperCase() + " WINS!");
+      location.reload();
     }
     changeColor();
   }
