@@ -21,8 +21,22 @@ function clickedArrow(arrow) {
     }
     changeColor();
   }
-
 }
+
+$(function() {
+  $(".draggable").draggable({
+    helper: "clone",
+    snap: ".tile",
+    snapMode: "inner",
+    revert: "invalid"
+    });
+  $(".tile").droppable({
+    drop: function (event, ui) {
+      var arrow = $(this).parent().attr("class");
+      clickedArrow(arrow);
+    }
+  })
+})
 
 // BEGIN BOARD GAME LOGIC//
 
@@ -32,11 +46,13 @@ var height = 6;
 var width = 7;
 
 function changeColor() {
+  $(".draggable").removeClass(color);
   if (color === "black"){
     color = "red";
   } else if (color === "red"){
     color = "black";
   }
+  $(".draggable").addClass(color);
 }
 
 function addPiece(column, piece){
@@ -113,25 +129,5 @@ function fwdDiagCheckMethod(space, row, column){
   return forwardSlash;
 
 }
-
-
-$(function() {
-  $(".draggable").draggable({
-    helper: "clone",
-    snap: ".tile",
-    snapMode: "inner",
-    revert: "invalid"
-    });
-  $(".tile").droppable({
-    drop: function (event, ui) {
-      $(this).removeClass("white red black")
-      if (ui.draggable.hasClass("red")) {
-        $(this).addClass("red")
-      } else {
-        $(this).addClass("black")
-      }
-    }
-  })
-})
 
 
