@@ -6,7 +6,6 @@ body {
   display: block;
   width: 70px;
   height: 70px;
-  background-color: white;
   border-radius: 100%;
   margin: 2px;
   box-shadow: -3px 3px 0px #888888;
@@ -75,3 +74,4 @@ body {
      transform: rotate(360deg);
   }
 }
+
