@@ -116,15 +116,22 @@ function fwdDiagCheckMethod(space, row, column){
 
 
 $(function() {
-  $(".sortable").sortable({
-    revert: true
-  })
   $(".draggable").draggable({
-    connectToSortable: ".sortable",
     helper: "clone",
+    snap: ".tile",
+    snapMode: "inner",
     revert: "invalid"
     });
-  $( "ul, li" ).disableSelection();
+  $(".tile").droppable({
+    drop: function (event, ui) {
+      $(this).removeClass("white red black")
+      if (ui.draggable.hasClass("red")) {
+        $(this).addClass("red")
+      } else {
+        $(this).addClass("black")
+      }
+    }
+  })
 })
 
 
