@@ -1,23 +1,43 @@
 $(document).ready(function() {
   tileListener();
+
 })
 
 function tileListener() {
-  $(".tile").on("click",clickedTile());
+  $(".arrow").on("click", function(){
+    var arrow = $(this).attr("id");
+    clickedArrow(arrow);
+  });
 }
 
-function clickedTile() {
+function clickedArrow(arrow) {
+  var divId = addPiece(arrow,color);
+  if (divId) {
+    $("#" + divId).removeClass('white');
+    $("#" + divId).addClass(color);
+    if (checkForWin()){
+      alert(color.toUpperCase() + " WINS!");
+      location.reload(true);
+    }
+    changeColor();
+  }
 
 }
-
-
 
 // BEGIN BOARD GAME LOGIC//
 
+var color = "black"
 var board = [["","","","","","",""],["","","","","","",""],["","","","","","",""],["","","","","","",""],["","","","","","",""],["","","","","","",""]];
-
 var height = 6;
 var width = 7;
+
+function changeColor() {
+  if (color === "black"){
+    color = "red";
+  } else if (color === "red"){
+    color = "black";
+  }
+}
 
 function addPiece(column, piece){
   if (board[0][column]){
@@ -27,13 +47,17 @@ function addPiece(column, piece){
   if (!board[5][column]){
     console.log(piece + " piece added to column " + column);
     board[5][column] = piece;
-    return (50+column);
+    var spaceToStr = ("5" + column.toString());
+    return spaceToStr;
   }
   for (var row = 1; row < height; row ++){
     if (board[row][column]){
       console.log(piece + " piece added to column " + column);
       board[row-1][column] = piece;
-      return ((row * 10)+column);
+      var spaceToStr = ((row-1).toString() + column);
+      console.log(spaceToStr);
+      console.log(spaceToStr.length);
+      return spaceToStr;
     }
   }
 }
@@ -49,7 +73,10 @@ function checkForWin(){
         var checkDiags = diagCheckMethod(space, row, column)
         if (checkRows || checkColumns || checkDiags){
           return winner(space);
+        }else{
+          return false;
         }
+
       }
     }
   }
