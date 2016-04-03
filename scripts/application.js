@@ -92,3 +92,6 @@ function fwdDiagCheckMethod(space, row, column){
 function winner(space){
   return true;
 }
+
+
+
