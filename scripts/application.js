@@ -7,5 +7,5 @@ function tileListener() {
 }
 
 function clickedTile() {
-  
+
 }
