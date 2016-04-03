@@ -14,6 +14,13 @@ body {
 .board {
   background-color: yellow;
   opacity: 0.4;
+  animation-duration: 2000s;
+  animation-name: wowrotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin: 0 auto;
+  margin-top: 50px;
+  box-shadow: 10px 10px 2px #888888;
 }
 
 .white {
@@ -30,12 +37,6 @@ body {
 
 .arrow {
   font-size: 36px;
-}
-
-.board {
-  margin: 0 auto;
-  margin-top: 50px;
-  box-shadow: 10px 10px 2px #888888;
 }
 
 .title {
@@ -56,14 +57,6 @@ body {
 
 .title, .subtitle, .board {
   transform: skew(0deg,3deg);
-}
-
-
-.board {
-  animation-duration: 2000s;
-  animation-name: wowrotate;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
 
 @keyframes wowrotate{

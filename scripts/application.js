@@ -13,7 +13,8 @@ function tileListener() {
 function clickedArrow(arrow) {
   var divId = addPiece(arrow,color);
   if (divId) {
-    $("#" + divId).css("color", color);
+    $("#" + divId).removeClass('white');
+    $("#" + divId).addClass(color);
     if (checkForWin()){
       //announce winner
     }
@@ -52,10 +53,9 @@ function addPiece(column, piece){
     if (board[row][column]){
       console.log(piece + " piece added to column " + column);
       board[row-1][column] = piece;
-      var spaceToStr = ((row * 10) + column).toString();
-      if (spaceToStr.length < 2){
-        spaceToStr = "0" + spaceToStr;
-      }
+      var spaceToStr = ((row-1).toString() + column);
+      console.log(spaceToStr);
+      console.log(spaceToStr.length);
       return spaceToStr;
     }
   }
