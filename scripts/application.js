@@ -1,23 +1,38 @@
 $(document).ready(function() {
   tileListener();
+
 })
 
 function tileListener() {
-  $(".tile").on("click",clickedTile());
+  $(".arrow").on("click",clickedArrorw());
 }
 
-function clickedTile() {
+function clickedArrow() {
+  var divId = addPiece($(this),color);
+  if (divId) {
+    // ajax call here
+    if (checkForWin()){
+      //ajax call to announce winner
+    }
+    changeColor();
+  }
 
 }
-
-
 
 // BEGIN BOARD GAME LOGIC//
 
+var color = "black"
 var board = [["","","","","","",""],["","","","","","",""],["","","","","","",""],["","","","","","",""],["","","","","","",""],["","","","","","",""]];
-
 var height = 6;
 var width = 7;
+
+function changeColor() {
+  if (color === "black"){
+    color = "red";
+  } else if (color === "red"){
+    color = "black";
+  }
+}
 
 function addPiece(column, piece){
   if (board[0][column]){
@@ -49,7 +64,10 @@ function checkForWin(){
         var checkDiags = diagCheckMethod(space, row, column)
         if (checkRows || checkColumns || checkDiags){
           return winner(space);
+        }else{
+          return false;
         }
+
       }
     }
   }
