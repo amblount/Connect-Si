@@ -70,6 +70,56 @@ body {
   background-size: 70px 70px;
 }
 
+.alivia {
+  background-image: url(../images/alivia.jpeg);
+  background-size: 70px 70px;
+}
+
+.cyrus {
+  background-image: url(../images/cyrus.jpeg);
+  background-size: 70px 70px;
+}
+
+.eddie {
+  background-image: url(../images/eddie.jpeg);
+  background-size: 70px 70px;
+}
+
+.kevin {
+  background-image: url(../images/kevin.jpeg);
+  background-size: 70px 70px;
+}
+
+.victor {
+  background-image: url(../images/victor.jpeg);
+  background-size: 70px 70px;
+}
+
+.github {
+  background-image: url(../images/github.png);
+  background-size: 70px 70px;
+}
+
+.javascript {
+  background-image: url(../images/javascript.jpg);
+  background-size: 70px 70px;
+}
+
+.ruby {
+  background-image: url(../images/ruby.png);
+  background-size: 70px 70px;
+}
+
+.sinatra {
+  background-image: url(../images/sinatra.jpeg);
+  background-size: 70px 70px;
+}
+
+.heroku {
+  background-image: url(../images/heroku.png);
+  background-size: 70px 70px;
+}
+
 .white {
   background-color: white;
 }
