@@ -130,8 +130,12 @@ $(function() {
     });
   $(".tile").droppable({
     drop: function (event, ui) {
-      $(this)
-        .css("background-color",ui.draggable.css("background-color"))
+      $(this).removeClass("white red black")
+      if (ui.draggable.hasClass("red")) {
+        $(this).addClass("red")
+      } else {
+        $(this).addClass("black")
+      }
     }
   })
 })
