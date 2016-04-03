@@ -12,15 +12,112 @@ body {
 }
 
 .board {
-  background-color: yellow;
-  opacity: 0.4;
-  animation-duration: 2000s;
+  background-color: #F7F579;
+  animation-duration: 500s;
   animation-name: wowrotate;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   margin: 0 auto;
   margin-top: 50px;
   box-shadow: 10px 10px 2px #888888;
+  display: none;
+}
+
+.select-player {
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 50px;
+  box-shadow: 10px 10px 2px #888888;
+}
+
+.hunter {
+  background-image: url(../images/hunter.png);
+  background-size: 70px 70px;
+}
+
+.sherif {
+  background-image: url(../images/sherif.png);
+  background-size: 70px 70px;
+}
+
+.sarah {
+  background-image: url(../images/sarah.jpeg);
+  background-size: 70px 70px;
+}
+
+.jaclyn {
+  background-image: url(../images/jaclyn.png);
+  background-size: 70px 70px;
+}
+
+.shambhavi {
+  background-image: url(../images/shambhavi.png);
+  background-size: 70px 70px;
+}
+
+.seba {
+  background-image: url(../images/seba.png);
+  background-size: 70px 70px;
+}
+
+.mihai {
+  background-image: url(../images/mihai.jpeg);
+  background-size: 70px 70px;
+}
+
+.james {
+  background-image: url(../images/james.jpeg);
+  background-size: 70px 70px;
+}
+
+.alivia {
+  background-image: url(../images/alivia.jpeg);
+  background-size: 70px 70px;
+}
+
+.cyrus {
+  background-image: url(../images/cyrus.jpeg);
+  background-size: 70px 70px;
+}
+
+.eddie {
+  background-image: url(../images/eddie.jpeg);
+  background-size: 70px 70px;
+}
+
+.kevin {
+  background-image: url(../images/kevin.jpeg);
+  background-size: 70px 70px;
+}
+
+.victor {
+  background-image: url(../images/victor.jpeg);
+  background-size: 70px 70px;
+}
+
+.github {
+  background-image: url(../images/github.png);
+  background-size: 70px 70px;
+}
+
+.javascript {
+  background-image: url(../images/javascript.jpg);
+  background-size: 70px 70px;
+}
+
+.ruby {
+  background-image: url(../images/ruby.png);
+  background-size: 70px 70px;
+}
+
+.sinatra {
+  background-image: url(../images/sinatra.jpeg);
+  background-size: 70px 70px;
+}
+
+.heroku {
+  background-image: url(../images/heroku.png);
+  background-size: 70px 70px;
 }
 
 .white {
@@ -33,6 +130,10 @@ body {
 
 .black {
   background-color: black;
+}
+
+.draggable {
+  display: none;
 }
 
 .arrow {

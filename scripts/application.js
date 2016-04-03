@@ -1,7 +1,30 @@
 $(document).ready(function() {
-  tileListener();
-
+  bindListeners();
 })
+
+function bindListeners() {
+  tileListener();
+  playerListener();
+}
+
+function playerListener() {
+  $(".player").on("click", function(){
+    if (!player1){
+      player1 = $(this).attr("id");
+      color = player1;
+      $(this).hide();
+      $(".subtitle").html("Select Plater 2:");
+
+    } else if (!player2){
+      player2 = $(this).attr("id");
+      $(".player-select").hide();
+      $(".board").show();
+      $(".subtitle").html(player1.toUpperCase() + " goes first.");
+      $(".draggable").addClass(color);
+      $(".draggable").show();
+    }
+  });
+}
 
 function tileListener() {
   $(".arrow").on("click", function(){
@@ -40,17 +63,19 @@ $(function() {
 
 // BEGIN BOARD GAME LOGIC//
 
-var color = "black"
+var player1 = "";
+var player2 = "";
+var color = "black";
 var board = [["","","","","","",""],["","","","","","",""],["","","","","","",""],["","","","","","",""],["","","","","","",""],["","","","","","",""]];
 var height = 6;
 var width = 7;
 
 function changeColor() {
   $(".draggable").removeClass(color);
-  if (color === "black"){
-    color = "red";
-  } else if (color === "red"){
-    color = "black";
+  if (color === player1){
+    color = player2;
+  } else if (color === player2){
+    color = player1;
   }
   $(".draggable").addClass(color);
 }
@@ -75,7 +100,6 @@ function addPiece(column, piece){
     }
   }
 }
-
 
 function checkForWin(){
   for (var row = 0; row < height; row ++){
