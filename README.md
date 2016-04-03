@@ -6,7 +6,7 @@ A practice application using Javascipt to implement Connect 4/四連
 + A user can see a styled board
 + A user can place a piece into a column
 + Users place alternating black and red pieces on the board
-+ Users can't place a piece in a filled column
++ ~~Users can't place a piece in a filled column~~
 + ~~Users are notified when they win the game (vertical, horizontal and diagonal win cases)~~
 + Users can play against each other in the same browser
 
@@ -26,7 +26,7 @@ A practice application using Javascipt to implement Connect 4/四連
 + Frontend: Kevin Serrano, Victor Wong
   + HTML Frame
   + Basic CSS (constructing the game board display)
-+ Backend: Alivia Blount, Cyrus Vattes, Eddie Bueno 
++ Backend: Alivia Blount, Cyrus Vattes, Eddie Bueno
   + Game Logic (2 person team)
   + jQuery Routes
 
