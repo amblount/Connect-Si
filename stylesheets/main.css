@@ -10,3 +10,15 @@
 .board {
   background-color: lightblue;
 }
+
+.white {
+  background-color: white;
+}
+
+.red {
+  background-color: red;
+}
+
+.black {
+  background-color: black;
+}
