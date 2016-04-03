@@ -13,7 +13,7 @@ function playerListener() {
       player1 = $(this).attr("id");
       color = player1;
       $(this).hide();
-      $(".subtitle").html("Select Plater 2:");
+      $(".subtitle").html("Select Player 2:");
 
     } else if (!player2){
       player2 = $(this).attr("id");
@@ -31,6 +31,10 @@ function tileListener() {
     var arrow = $(this).attr("id");
     clickedArrow(arrow);
   });
+  $("td").on("click", function(){
+    var column = $(this).attr("class");
+    clickedArrow(column);
+  })
 }
 
 function clickedArrow(arrow) {
@@ -39,8 +43,13 @@ function clickedArrow(arrow) {
     $("#" + divId).removeClass('white');
     $("#" + divId).addClass(color);
     if (checkForWin()){
+      if (winFlag){
       alert(color.toUpperCase() + " WINS!");
       location.reload(true);
+      } else {
+      alert("It's a tie! Y.Y");
+      location.reload(true);
+      }
     }
     changeColor();
   }
@@ -69,6 +78,7 @@ var color = "black";
 var board = [["","","","","","",""],["","","","","","",""],["","","","","","",""],["","","","","","",""],["","","","","","",""],["","","","","","",""]];
 var height = 6;
 var width = 7;
+var winFlag = false;
 
 function changeColor() {
   $(".draggable").removeClass(color);
@@ -111,9 +121,11 @@ function checkForWin(){
         var checkColumns = columnCheckMethod(space, row, column);
         var checkDiags = diagCheckMethod(space, row, column)
         if (checkRows || checkColumns || checkDiags){
+          winFlag = true;
+          return true;
+        } else if (checkForLoss()){
           return true;
         }
-
       }
     }
   }
@@ -154,4 +166,12 @@ function fwdDiagCheckMethod(space, row, column){
 
 }
 
+function checkForLoss(){
+  if (board[0][0] && board[0][1] && board[0][2] && board[0][3]
+    && board[0][4] && board[0][5] && board[0][6]){
+    return true;
+  } else {
+    return false;
+  }
+}
 

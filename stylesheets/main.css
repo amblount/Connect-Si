@@ -13,14 +13,17 @@ body {
 
 .board {
   background-color: #F7F579;
-  animation-duration: 500s;
-  animation-name: wowrotate;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
   margin: 0 auto;
   margin-top: 50px;
   box-shadow: 10px 10px 2px #888888;
   display: none;
+}
+
+.rotate {
+  animation-duration: 120s;
+  animation-name: wowrotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .select-player {
