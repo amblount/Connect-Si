@@ -74,18 +74,18 @@ var width = 7;
 function addPiece(column, piece){
   if (board[0][column]){
     console.log("Cannot add a piece there");
-    return true;
+    return false;
   }
   if (!board[5][column]){
     console.log(piece + " piece added to column " + column);
     board[5][column] = piece;
-    return false;
+    return (50+column);
   }
   for (var row = 1; row < height; row ++){
     if (board[row][column]){
       console.log(piece + " piece added to column " + column);
       board[row-1][column] = piece;
-      return false;
+      return ((row * 5)+column);
     }
   }
 }
