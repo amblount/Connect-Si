@@ -9,11 +9,13 @@ body {
   background-color: white;
   border-radius: 100%;
   margin: 5px;
+  box-shadow: -5px 5px 3px #888888;
 }
 
 .board {
-  background-color: grey;
+  background-color: yellow;
   opacity: 0.4;
+  transform: rotate(7deg);
 }
 
 .white {
@@ -35,6 +37,7 @@ body {
 .board {
   margin: 0 auto;
   margin-top: 50px;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .title {
@@ -49,12 +52,4 @@ body {
   font-size: 24px;
   margin: 0;
   margin-top: 10px;
-}
-
-.stand {
-  width: 900px;
-  height: 50px;
-  background-color: grey;
-  opacity: 0.5;
-  margin: 0 auto;
 }

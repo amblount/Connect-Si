@@ -33,7 +33,7 @@ function addPiece(column, piece){
     if (board[row][column]){
       console.log(piece + " piece added to column " + column);
       board[row-1][column] = piece;
-      return ((row * 5)+column);
+      return ((row * 10)+column);
     }
   }
 }
