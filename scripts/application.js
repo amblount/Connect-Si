@@ -9,6 +9,13 @@ function doStuff(snapshot) {
 function bindListeners() {
   tileListener();
   playerListener();
+  playerSelectListener();
+}
+
+function playerSelectListener() {
+  $(".player-select div").on("mouseover", function() {
+    $(".namespace").html($(this).attr("id"));
+  });
 }
 
 function playerListener() {
@@ -16,18 +23,21 @@ function playerListener() {
     if (!player1){
       player1 = $(this).attr("id");
       color = player1;
-      $(this).hide();
-      $(".subtitle").html("Select Player 2:");
+      $(this).slideUp(500);
+      $(".subtitle").html("Player 2: <br><span class='namespace'>Select a player.</span>");
 
     } else if (!player2){
       player2 = $(this).attr("id");
-      $(".player-select").hide();
-      $(".board").show();
       $(".subtitle").html(player1.toUpperCase() + " goes first.");
-      $(".draggable").addClass(color);
-      $(".draggable").show();
+      $(".player-select").slideUp({duration: 500, done: showDraggable});
     }
   });
+}
+
+function showDraggable() {
+  $(".draggable").addClass(color);
+  $(".draggable").slideDown(1000);
+  $(".board").show(500);
 }
 
 function tileListener() {
@@ -48,11 +58,12 @@ function clickedArrow(arrow) {
     $("#" + divId).addClass(color);
     if (checkForWin()){
       if (winFlag){
-      alert(color.toUpperCase() + " WINS!");
-      location.reload(true);
+        $("body").append("<img src='images/seal.jpg'>")
+        alert(color.toUpperCase() + " WINS!");
+        location.reload(true);
       } else {
-      alert("It's a tie! Y.Y");
-      location.reload(true);
+        alert("It's a tie! Y.Y");
+        location.reload(true);
       }
     }
     changeColor();
@@ -85,11 +96,16 @@ var width = 7;
 var winFlag = false;
 
 function changeColor() {
+  var audioElement =  document.createElement('audio')
+  audioElement.setAttribute('src','images/blop.wav')
+  audioElement.play();
   $(".draggable").removeClass(color);
   if (color === player1){
+    $(".subtitle").html("It's " + player2 + "'s turn!")
     color = player2;
   } else if (color === player2){
     color = player1;
+    $(".subtitle").html("It's " + player1 + "'s turn!")
   }
   $(".draggable").addClass(color);
 }
