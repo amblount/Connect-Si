@@ -24,7 +24,7 @@ function playerListener() {
       player1 = $(this).attr("id");
       color = player1;
       $(this).slideUp(500);
-      $(".subtitle").html("Player 2: <br><span class='namespace'>Select a player.</span>");
+      $(".subtitle").html("Player 2: <br><span class='namespace'>Select a player!</span>");
 
     } else if (!player2){
       player2 = $(this).attr("id");
@@ -58,9 +58,9 @@ function clickedArrow(arrow) {
     $("#" + divId).addClass(color);
     if (checkForWin()){
       if (winFlag){
-        $("body").append("<img src='images/seal.jpg'>")
-        alert(color.toUpperCase() + " WINS!");
-        location.reload(true);
+        $("body").append("<div><img src='images/seal.jpg'></div>");
+        newcolor = color
+        setTimeout(clickedHelper,500)
       } else {
         alert("It's a tie! Y.Y");
         location.reload(true);
@@ -68,6 +68,11 @@ function clickedArrow(arrow) {
     }
     changeColor();
   }
+}
+
+function clickedHelper() {
+  alert(newcolor.toUpperCase() + " WINS!");
+  location.reload(true);
 }
 
 $(function() {
