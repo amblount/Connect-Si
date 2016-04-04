@@ -24,7 +24,7 @@ function playerListener() {
       player1 = $(this).attr("id");
       color = player1;
       $(this).slideUp(500);
-      $(".subtitle").html("Player 2: <br><span class='namespace'>Select a player.</span>");
+      $(".subtitle").html("Player 2: <br><span class='namespace'>Select a player!</span>");
 
     } else if (!player2){
       player2 = $(this).attr("id");
