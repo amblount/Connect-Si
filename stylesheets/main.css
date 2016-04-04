@@ -26,11 +26,31 @@ body {
   animation-timing-function: linear;
 }
 
+.first-rotate {
+  animation-duration: 1s;
+  animation-name: firstrotate;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+
+@keyframes firstrotate{
+  from {
+     transform: rotateY(0deg);
+  }
+  to {
+     transform: rotateY(360deg);
+  }
+}
+
 .select-player {
   background-color: white;
   margin: 0 auto;
   margin-top: 50px;
   box-shadow: 10px 10px 2px #888888;
+}
+
+.winner {
+
 }
 
 .hunter {
@@ -137,6 +157,7 @@ body {
 
 .draggable {
   display: none;
+
 }
 
 .arrow {
@@ -159,7 +180,7 @@ body {
   text-shadow: 1px 1px 2px #888888;
 }
 
-.title, .subtitle, .board {
+.title, .subtitle, .board, .player-select {
   transform: skew(0deg,3deg);
 }
 
@@ -172,3 +193,6 @@ body {
   }
 }
 
+.player-select div:hover {
+  opacity: 0.5;
+}
