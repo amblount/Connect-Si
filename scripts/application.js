@@ -58,9 +58,9 @@ function clickedArrow(arrow) {
     $("#" + divId).addClass(color);
     if (checkForWin()){
       if (winFlag){
-        $("body").append("<img src='images/seal.jpg'>")
-        alert(color.toUpperCase() + " WINS!");
-        location.reload(true);
+        $("body").append("<div><img src='images/seal.jpg'></div>")
+
+        setTimeout(clickedHelper,500)
       } else {
         alert("It's a tie! Y.Y");
         location.reload(true);
@@ -68,6 +68,11 @@ function clickedArrow(arrow) {
     }
     changeColor();
   }
+}
+
+function clickedHelper() {
+  alert(color.toUpperCase() + " WINS!");
+  location.reload(true);
 }
 
 $(function() {
