@@ -2,6 +2,10 @@ $(document).ready(function() {
   bindListeners();
 })
 
+function doStuff(snapshot) {
+  console.log(snapshot.key());
+}
+
 function bindListeners() {
   fourRef = new Firebase('')
   tileListener();
