@@ -3,6 +3,7 @@ $(document).ready(function() {
 })
 
 function bindListeners() {
+  fourRef = new Firebase('')
   tileListener();
   playerListener();
 }
