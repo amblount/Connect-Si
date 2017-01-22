@@ -1,6 +1,9 @@
 # Connect-Si (Connect-四)
 A practice application using Javascipt to implement Connect 4/四連
 
+## Deployed Link
+[Firebase](https://sweltering-inferno-3185.firebaseapp.com/)
+
 ## Minimum Viable Product
 + ~~A user can see a board~~
 + ~~A user can see a styled board~~
